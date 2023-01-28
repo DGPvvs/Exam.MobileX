@@ -32,7 +32,7 @@ namespace Exam.MobileX
 			.Where(v => keywords.Any(k => k.Equals(v.Brand)) || keywords.Any(k => k.Equals(v.Model))
 															 || keywords.Any(k => k.Equals(v.Location))
 															 || keywords.Any(k => k.Equals(v.Color)))
-			.OrderBy(v => v.IsVIP)
+			.OrderByDescending(v => v.IsVIP)
 			.ThenBy(v => v.Price);
 
         public IEnumerable<Vehicle> GetVehiclesBySeller(string sellerName) => this.selersByName.ContainsKey(sellerName)
